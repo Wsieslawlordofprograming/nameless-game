@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+canvas {
+  border: 2px solid white;
+}
+
+#gameOverScreen {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 40px 60px;
+  border: 2px solid #e8c170;
+  border-radius: 10px;
+}
+
+#gameOverScreen h1 {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 52px;
+  margin: 0 0 10px 0;
+  letter-spacing: 6px;
+  text-shadow: 4px 4px 0px #000;
+}
+
+#scoreDisplay {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 28px;
+  margin: 10px 0 0 0;
+}
+
+#highScoreDisplay {
+  color: white;
+  font-family: monospace;
+  font-size: 20px;
+  margin: 5px 0 20px 0;
+}
+
+#titleScreen, #pauseScreen {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 60px;
+  border: 3px solid #e8c170;
+  image-rendering: pixelated;
+}
+
+#titleText, #pauseText {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 52px;
+  margin: 0 0 10px 0;
+  letter-spacing: 6px;
+  text-shadow: 4px 4px 0px #000;
+}
+
+#titleSub, #pauseSub {
+  color: white;
+  font-family: monospace;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 0;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.menuOption {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 8px 0 0 0;
+  cursor: pointer;
+}
+
+.menuOption:hover {
+  color: white;
+}
+
+.howToLine {
+  color: white;
+  font-family: monospace;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 6px 0;
+}
+
+#howToPlayScreen {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 60px;
+  border: 3px solid #e8c170;
+}
+
+#shopScreen {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.92);
+  padding: 30px 40px;
+  border: 3px solid #e8c170;
+  min-width: 500px;
+}
+
+#shopkeeper {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e8c170;
+  padding-bottom: 15px;
+}
+
+#shopkeeperArt {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+#shopkeeperSpeech {
+  color: white;
+  font-family: monospace;
+  font-size: 14px;
+  margin: 0;
+  animation: blink 1s step-start infinite;
+}
+
+#shopColumns {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  border: 2px solid #e8c170;
+}
+
+.shopColumn {
+  flex: 1;
+  padding: 15px;
+  border-right: 2px solid #e8c170;
+}
+
+.shopColumn:last-child {
+  border-right: none;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.columnTitle {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #e8c170;
+  padding-bottom: 8px;
+}
+
+.shopItem {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.shopItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.shopItemName {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 3px 0;
+}
+
+.shopItemDesc {
+  color: #aaa;
+  font-family: monospace;
+  font-size: 12px;
+  margin: 0 0 3px 0;
+}
+
+.shopItemLevel {
+  color: white;
+  font-family: monospace;
+  font-size: 12px;
+  margin: 0 0 3px 0;
+}
+
+.shopItemCost {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 12px;
+  margin: 0 0 5px 0;
+}
+
+.buyBtn {
+  font-size: 14px;
+  margin: 0;
+}
+
+#shopCurrency {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 20px;
+  margin: 15px 0 0 0;
+  border-top: 2px solid #e8c170;
+  padding-top: 10px;
+}
+
+#coinsDisplay {
+  color: #e8c170;
+  font-family: monospace;
+  font-size: 20px;
+  margin: 5px 0 20px 0;
+}
+
+#settingsScreen {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 60px;
+  border: 3px solid #e8c170;
+}
